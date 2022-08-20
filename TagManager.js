@@ -74,16 +74,16 @@ class TagManager {
 
         this._getData(data => {    
                 for (const key in data) {
-                    let divView = document.createElement(this.tagViewElement);    // noHTML element reprezentujici jeden tag
-                    divView.setAttribute('data-tagview-id', key);
-                    divView.innerText = '#' + data[key];
+                    let tagViewElement = document.createElement(this.tagViewElement);
+                    tagViewElement.setAttribute('data-tagview-id', key);
+                    tagViewElement.innerText = '#' + data[key];
                     
                     
-                    divView.addEventListener('click', function () { // nastaveni na tag udalost kliknuti ktera oznaci tag a prida ho do tagFiled
+                    tagViewElement.addEventListener('click', function () {
                         tagViewClick(this);
                     });  
 
-                    this.tagView.appendChild(divView);              
+                    this.tagView.appendChild(tagViewElement);              
                 }
         });
     }
